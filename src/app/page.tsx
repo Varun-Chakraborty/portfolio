@@ -138,6 +138,13 @@ function Project({
     <div className="space-y-2 p-4 rounded-lg">
       <div className="font-bold text-xl">{title}</div>
       <div className="text-sm">{description}</div>
+      <div className="sm:hidden">
+        <Button>
+          <Link href={link} target="_blank">
+            Check it out
+          </Link>
+        </Button>
+      </div>
       <div className="hidden sm:block w-[667px] h-[375px] overflow-hidden border border-gray-300 rounded-lg shadow-md relative group">
         <iframe
           src={link}
