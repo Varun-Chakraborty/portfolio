@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
-import Link from "next/link";
-import Image from "next/image";
+import { Footer } from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,42 +35,7 @@ export default function RootLayout({
         <main>
           {children}
         </main>
-        <footer className="p-2 space-y-4 text-sm text-muted-foreground">
-          <div className="flex justify-between">
-            <div className="font-bold text-xl">Social Links</div>
-            <div className="flex gap-6">
-              <Link href="https://github.com/Varun-Chakraborty" target="_blank">
-                <Image
-                  src="/github-mark.png"
-                  width={25}
-                  height={25}
-                  alt="github"
-                  className="dark:invert"
-                />
-              </Link>
-              <Link href="https://x.com/skriptinveek" target="_blank">
-                <Image
-                  src="/x-logo-black.png"
-                  width={25}
-                  height={25}
-                  alt="github"
-                  className="dark:invert"
-                />
-              </Link>
-              <Link href="https://www.linkedin.com/in/varunchakraborty/" target="_blank">
-                <Image
-                  src="/LI-In-Bug.png"
-                  width={25}
-                  height={25}
-                  alt="linkedin"
-                />
-              </Link>
-            </div>
-          </div>
-          <div className="w-full text-center">
-            &copy;{new Date().getFullYear()} Varun Chakraborty<br />All rights reserved
-          </div>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

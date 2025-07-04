@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 type Theme = "light" | "dark" | "system";
 
 function useFetchTheme() {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("dark");
   const [status, setStatus] = useState<"loading" | "idle">("loading");
 
   useEffect(() => {
-    setTheme(localStorage.getItem("theme") as Theme);
+    setTheme(localStorage.getItem("theme") as Theme || "dark");
     setStatus("idle");
   }, []);
 
@@ -37,13 +37,13 @@ export function useTheme() {
       "dark",
       theme === "dark" || (theme === "system" && prefersDark)
     );
+    localStorage.setItem("theme", theme);
   }, [prefersDark, theme]);
 
   function toggleTheme() {
     if (status == "loading") return;
     const nTheme = theme === "dark" ? "system" : theme === "system" ? "light" : "dark";
     setTheme(nTheme);
-    localStorage.setItem("theme", nTheme);
   }
 
   return { theme, toggleTheme };
