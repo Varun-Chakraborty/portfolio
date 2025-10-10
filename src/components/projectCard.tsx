@@ -32,7 +32,7 @@ export function ProjectCard({ className }: Readonly<{ className?: string }>) {
       <div className="mx-auto max-w-4xl text-center">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">My Work & Creations</h2>
         <p className="mt-4 text-muted-foreground md:text-xl">
-          Here are some of the projects I'm proud to have built.
+          Here are some of the projects I&apos;m proud to have built.
         </p>
       </div>
 

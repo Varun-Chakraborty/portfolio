@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { PenTool, Server, Wrench } from "lucide-react";
 
 // In lib/data.ts, group skills by their purpose
@@ -28,7 +27,7 @@ export function SkillSetCard({ className }: Readonly<{ className?: string }>) {
   return (
     <section id="skills" className={cn("w-full py-12", className)}>
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">My Developer's Toolkit</h2>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">My Developer&apos;s Toolkit</h2>
         <p className="mt-4 text-muted-foreground md:text-xl">
           More than just a list of technologies, this is how I approach building great products.
         </p>

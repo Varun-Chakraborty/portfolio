@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { ThemeCtx, ThemeProvider } from "@/lib/context/theme";
+import { ThemeProvider } from "@/lib/context/theme";
+import { FloatingBar } from "@/components/floatingbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overscroll-none">
+    <html lang="en" className="overscroll-none scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground min-h-screen`}
       >
         <ThemeProvider>
           {children}
+          <FloatingBar />
           <Footer />
         </ThemeProvider>
       </body>

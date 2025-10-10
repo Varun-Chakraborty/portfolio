@@ -23,7 +23,7 @@ export function Journey() {
     <section id="journey" className="w-full py-12">
       <div className="mx-auto max-w-4xl text-center">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">My Journey as a Developer</h2>
-        <p className="mt-4 text-muted-foreground lg:text-xl">From pixels to databases, here's a brief look at my evolution.</p>
+        <p className="mt-4 text-muted-foreground lg:text-xl">From pixels to databases, here&apos;s a brief look at my evolution.</p>
       </div>
       <div className="relative mt-12">
         <div className="lg:absolute left-1/2 top-4 h-full w-0.5 -translate-x-1/2 bg-border" />
