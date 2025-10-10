@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "@/lib/hooks/theme";
+import { useTheme } from "@/lib/context/theme";
 import { Button } from "./ui/button";
 import { Laptop, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";

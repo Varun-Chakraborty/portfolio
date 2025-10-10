@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "light" | "dark" | "system";
 
@@ -24,14 +24,21 @@ function useFetchTheme() {
   return { theme, status, setTheme };
 }
 
-export function useTheme() {
+export interface ThemeCtx {
+  theme: Theme;
+  toggleTheme: () => void;
+}
+
+export const ThemeCtx = createContext<ThemeCtx | null>(null);
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const { theme, status, setTheme } = useFetchTheme();
   const [prefersDark, setPrefersDark] = useState<boolean>(false);
-
+  
   useEffect(() => {
     setPrefersDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
   }, []);
-
+  
   useEffect(() => {
     document.documentElement.classList.toggle(
       "dark",
@@ -39,12 +46,24 @@ export function useTheme() {
     );
     localStorage.setItem("theme", theme);
   }, [prefersDark, theme]);
-
+  
   function toggleTheme() {
     if (status == "loading") return;
     const nTheme = theme === "dark" ? "system" : theme === "system" ? "light" : "dark";
     setTheme(nTheme);
   }
 
-  return { theme, toggleTheme };
+  return (
+    <ThemeCtx.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeCtx.Provider>
+  );
+}
+
+export function useTheme() {
+  const context = useContext(ThemeCtx);
+  if (context === undefined) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
+  return context;
 }

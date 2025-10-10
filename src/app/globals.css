@@ -53,13 +53,13 @@
   --animate-grow-shrink: grow-shrink 1s ease-in-out infinite;
   @keyframes grow-shrink {
     0% {
-      width: 100%;
+      transform: scaleX(1);
     }
     50% {
-      width: 40%;
+      transform: scaleX(0.3);
     }
     100% {
-      width: 100%;
+      transform: scaleX(1);
     }
   }
 }
