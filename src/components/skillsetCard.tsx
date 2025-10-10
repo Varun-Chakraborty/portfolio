@@ -1,27 +1,6 @@
+import { skillNarrative } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { PenTool, Server, Wrench } from "lucide-react";
 
-// In lib/data.ts, group skills by their purpose
-const skillNarrative = [
-  {
-    category: "Building User Interfaces",
-    narrative: "I create intuitive and responsive user experiences using a modern frontend stack. My focus is on writing clean, reusable components and ensuring pixel-perfect design implementation.",
-    skills: ["React.js", "Next.js", "TypeScript", "HTML", "CSS", "TailwindCSS"],
-    icon: PenTool,
-  },
-  {
-    category: "Powering Servers & APIs",
-    narrative: "For the backend, I build efficient and scalable RESTful APIs. I focus on creating a solid foundation that is secure, fast, and ready to grow with the application's needs.",
-    skills: ["Node.js", "Express.js"],
-    icon: Server,
-  },
-  {
-    category: "Tools & DevOps",
-    narrative: "I rely on a robust set of tools for version control, collaboration, and deployment. These practices ensure a smooth and reliable development lifecycle from start to finish.",
-    skills: ["Git", "GitHub", "Docker"],
-    icon: Wrench,
-  },
-];
 
 export function SkillSetCard({ className }: Readonly<{ className?: string }>) {
   return (
