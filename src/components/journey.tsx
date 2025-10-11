@@ -1,22 +1,4 @@
-import { Code, Rocket, BrainCircuit } from "lucide-react";
-
-const timeline = [
-  {
-    icon: Code,
-    title: "Foundation in Code",
-    description: "My journey began with a strong foundation in HTML, CSS, and JavaScript, where I honed my skills in bringing static designs to life on the web.",
-  },
-  {
-    icon: Rocket,
-    title: "Expanding to Backend",
-    description: "Driven by a desire to build complete solutions, I delved into backend technologies like Node.js and Express, learning to create robust and scalable server-side applications.",
-  },
-  {
-    icon: BrainCircuit,
-    title: "Full-Stack Development",
-    description: "Today, I combine my front-end and back-end expertise to build seamless, full-stack experiences, always with a keen eye on performance and user-centric design.",
-  },
-];
+import { timeline } from "@/lib/data";
 
 export function Journey() {
   return (

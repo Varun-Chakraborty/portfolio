@@ -4,6 +4,7 @@ import { useTheme } from "@/lib/context/theme"; // Assuming your theme hook is h
 import { Button } from "./ui/button";
 import { Laptop, Moon, Sun } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function FloatingBar() {
   const { theme, toggleTheme } = useTheme();
@@ -17,10 +18,14 @@ export function FloatingBar() {
     >
       <div className="flex items-center gap-2 p-2 rounded-full border bg-card/50 backdrop-blur-md shadow-lg">
         <Button variant="ghost" className="rounded-full">
-          Home
+          <Link href="/">
+            <span>Home</span>
+          </Link>
         </Button>
-        <Button variant="ghost" className="rounded-full">
-          Projects
+        <Button variant="ghost" className="rounded-full" asChild>
+          <Link href="#projects">
+            Projects
+          </Link>
         </Button>
         <div className="h-6 w-px bg-border mx-2" />
         <Button variant="outline" onClick={toggleTheme} className="rounded-full p-2 h-auto w-auto">

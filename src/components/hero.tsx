@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Linkedin } from "lucide-react";
 import { socialLinks } from "@/lib/data"; // Make sure socialLinks are in your data file
+import { SVGs } from "./svgs";
 
 export function Hero() {
   const [attribute, setAttribute] = useState<string>("Creator");
@@ -24,11 +25,13 @@ export function Hero() {
   const getIcon = (name: string) => {
     switch (name.toLowerCase()) {
       case "github":
-        return <Github className="h-5 w-5" />;
+        return <SVGs.Github className="h-5 w-5 dark:invert" />;
       case "linkedin":
         return <Linkedin className="h-5 w-5" />;
       case "x":
-        return <Twitter className="h-5 w-5" />; // Assuming 'x' is Twitter
+        return <SVGs.X className="h-5 w-5 dark:invert" />;
+      case "email":
+        return <SVGs.Gmail className="h-5 w-5 dark:invert" />;
       default:
         return null;
     }

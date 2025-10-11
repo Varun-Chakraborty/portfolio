@@ -9,7 +9,7 @@ import { projects } from "@/lib/data"; // Ensure your data.ts has project info
 type Project = {
   title: string;
   description: string;
-  link: string;
+  link?: string;
   repo: string; // Add a 'repo' link to your data
   image: string;
   tags: string[]; // Add 'tags' to your data
@@ -63,11 +63,11 @@ export function ProjectCard({ className }: Readonly<{ className?: string }>) {
             </div>
             {/* Hover Overlay with Action Buttons */}
             <div className="absolute inset-0 flex items-center justify-center gap-4 bg-black/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              <Button asChild>
+              {project.link && <Button asChild>
                 <Link href={project.link} target="_blank" rel="noopener noreferrer">
                   Live Demo <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
-              </Button>
+              </Button>}
               <Button variant="secondary" asChild>
                 <Link href={project.repo} target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2 h-4 w-4" /> View Code

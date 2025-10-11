@@ -1,23 +1,25 @@
-import { Cpu, Database, Layers, PenTool, Server, Wrench } from "lucide-react";
+import { Cpu, Database, Layers, PenTool, Server, Wrench, Code, Rocket, BrainCircuit } from "lucide-react";
 
 export const socialLinks = [
   {
     name: "github",
     url: "https://github.com/Varun-Chakraborty",
-    logo: "/github-mark.png",
     username: "Varun-Chakraborty",
   },
   {
     name: "x",
     url: "https://x.com/skriptinveek",
-    logo: "/x-logo-black.png",
     username: "skriptinveek",
   },
   {
     name: "linkedin",
-    url: "https://www.linkedin.com/in/varunchakraborty/",
-    logo: "/LI-In-Bug.png",
+    url: "https://www.linkedin.com/in/varun-chakraborty-90a1622b4/",
     username: "Varun Chakraborty",
+  },
+  {
+    name: "email",
+    url: "mailto:varunchakraborty9526@gmail.com",
+    username: "varunchakraborty9526@gmail.com",
   },
 ];
 
@@ -27,16 +29,16 @@ export const projects = [
     description: "A simple blog app made with React.js.",
     link: "https://blog-post-seven-self.vercel.app/",
     image: "/blogpost.png",
-    repo: "https://github.com/Varun-Chakraborty/blog-post", // Add this
-    tags: ["React", "Next.js", "Tailwind CSS"], // Add this
+    repo: "https://github.com/Varun-Chakraborty/blog-post",
+    tags: ["React", "Next.js", "Tailwind CSS"],
   },
-  // Add your next project here!
-  // {
-  //   title: "Project Two",
-  //   description: "Description for the second project.",
-  //   link: "https://example.com",
-  //   image: "/project-two.png",
-  // },
+  {
+    title: "CPU Emulator & Assembler",
+    description: "A CPU emulator and its corresponding assembler, built from scratch in Rust. This project simulates the fetch-decode-execute cycle of a processor, translating a custom assembly language into bytecode for execution within the virtual machine.",
+    image: "/compiler.png",
+    repo: "https://github.com/Varun-Chakraborty/Compiler",
+    tags: ["Rust", "Emulation", "Systems Programming", "Computer Architecture"],
+  },
 ];
 
 export const skillNarrative = [
@@ -70,11 +72,33 @@ export const skillNarrative = [
     skills: ["Redux"],
     icon: Layers,
   },
-  // New Category for Low-Level Programming
   {
     category: "Low-Level & Systems Programming",
     narrative: "I'm fascinated by how software interacts with hardware. I'm currently designing and building a miniature CPU and its assembler using Rust to deepen my understanding of computer architecture.",
     skills: ["Rust"],
     icon: Cpu,
   },
+];
+
+export const timeline = [
+  {
+    icon: Code,
+    title: "Foundation in Code",
+    description: "My journey began with a strong foundation in HTML, CSS, and JavaScript, where I honed my skills in bringing static designs to life on the web.",
+  },
+  {
+    icon: Rocket,
+    title: "Expanding to Backend",
+    description: "Driven by a desire to build complete solutions, I delved into backend technologies like Node.js and Express, learning to create robust and scalable server-side applications.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "Full-Stack Development",
+    description: "Today, I combine my front-end and back-end expertise to build seamless, full-stack experiences, always with a keen eye on performance and user-centric design.",
+  },
+  {
+    icon: Cpu,
+    title: "Systems Programming",
+    description: "I'm currently designing and building a miniature CPU and its assembler using Rust to deepen my understanding of computer architecture.",
+  }
 ];
