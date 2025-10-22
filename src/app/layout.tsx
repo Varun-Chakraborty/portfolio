@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/lib/context/theme";
 import { FloatingBar } from "@/components/floatingbar";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
           <FloatingBar />
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
